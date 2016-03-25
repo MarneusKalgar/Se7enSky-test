@@ -26,8 +26,13 @@
 /*								Layout
 /******************************************/
 .window {
-  font-size: 1rem/1.5;
+  font-size: 1rem;
   color: #2757b0;
+  background: -webkit-linear-gradient(315deg, rgba(252,255,244,0.91) 0%, rgba(247,249,234,0.91) 27%, rgba(239,239,217,0.88) 71%, rgba(233,233,206,0.88) 100%);
+  background: -moz-linear-gradient(315deg, rgba(252,255,244,0.91) 0%, rgba(247,249,234,0.91) 27%, rgba(239,239,217,0.88) 71%, rgba(233,233,206,0.88) 100%);
+  background: -o-linear-gradient(315deg, rgba(252,255,244,0.91) 0%, rgba(247,249,234,0.91) 27%, rgba(239,239,217,0.88) 71%, rgba(233,233,206,0.88) 100%);
+  background: -ms-linear-gradient(315deg, rgba(252,255,244,0.91) 0%, rgba(247,249,234,0.91) 27%, rgba(239,239,217,0.88) 71%, rgba(233,233,206,0.88) 100%);
+  background: linear-gradient(135deg, rgba(252,255,244,0.91) 0%, rgba(247,249,234,0.91) 27%, rgba(239,239,217,0.88) 71%, rgba(233,233,206,0.88) 100%);
 }
 .wrapper {
   width: 80%;
@@ -48,7 +53,7 @@
 /******************************************/
 /*					product-container styles
 /******************************************/
-.product-container {
+.products-container {
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -86,6 +91,7 @@
 .product-item {
   display: block;
   position: relative;
+  float: left;
   margin: 1em 2% 0 0;
   padding: 0;
   -webkit-box-flex: 1;
@@ -120,6 +126,7 @@
   display: block;
   max-width: 100%;
   margin: 0 auto;
+  border: none;
 }
 .product-item__description {
   margin: 0;
@@ -152,4 +159,19 @@
   font: bold 0.8rem 'roboto_condensedbold', Helvetica, sans-serif;
   text-align: center;
   color: #202121;
+}
+/******************************************/
+/*      clearfix for older browsers
+/******************************************/
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+.cf:after {
+  clear: both;
+}
+/* For IE 6/7 only Include this rule to trigger hasLayout and contain floats. */
+.cf {
+  *zoom: 1;
 }
