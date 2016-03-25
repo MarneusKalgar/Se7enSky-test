@@ -1,0 +1,21 @@
+{
+  "name": "Se7ensky-test",
+  "authors": [
+    "Igor <marneus.kalgar90@gmail.com>"
+  ],
+  "description": "a test for Se7ensky",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "html5shiv": "^3.7.3"
+  }
+}

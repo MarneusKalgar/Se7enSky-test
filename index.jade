@@ -1,0 +1,53 @@
+doctype
+html( lang="ru", class="window" )
+	head
+		title Se7ensky-test
+		meta( charset='utf-8' )
+		meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+		meta( name='viewport', content='width=device-width, initial-scale=1.0' )
+		meta( name='description', content='A simple fragment of e-shop' )
+		meta( name='author', content='Igor Chernobay' )
+		link( rel='shortcut icon', type='image/png', href='img/favicon.png' )
+		link( href='css/main.css', rel='stylesheet' )
+		<!--[if lt IE 9]>
+		script( src="js/html5shiv/dist/html5shiv.min.js" )
+		<![endif]-->
+	body.wrapper
+		//block page-header
+		header.page-header
+			h1.page-header__title A simple fragment of the e-shop
+		//end block page-header
+
+		//block product-container
+		section.product-container
+
+			//- This mixin generates the product-item blocks
+			mixin productItem(src, alt, name, items)
+				//block product-item
+				a.product-item( href="#" )
+					img.product-item__image(src=src, alt=alt)
+					p.product-item__description= name
+						span.product-item__price= items
+				//end block product-item
+
+			+productItem('img/backpack-ready-for-school.png', 'Рюкзак Ready for School', 'Рюкзак "Ready for School"', '241.50')
+
+			+productItem('img/backpack-world-of-birds.png', 'Рюкзак Птичье царство', 'Рюкзак "Птичье царство"', '241.50')
+
+			+productItem('img/backpack-madonna.png', 'Рюкзак Мадонна', 'Рюкзак "Рюкзак Мадонна"', '241.50')
+
+			+productItem('img/backpack-violet-green.png', 'Рюкзак Violet Green', 'Рюкзак "Violet Green"', '241.50')
+
+			+productItem('img/backpack-ripndip-wilderness.png', 'Рюкзак Ripndip Wilderness', 'Рюкзак "Ripndip Wilderness"', '241.50')
+
+			+productItem('img/backpack-of-the-wall.png', 'Рюкзак Of the Wall', 'Рюкзак "Of the Wall"', '241.50')
+
+			+productItem('img/backpack-simple-red.png', 'Рюкзак Simple Red', 'Рюкзак "Simple Red"', '241.50')
+		
+		//block page-footer
+		footer.page-footer
+			p.page-footer__info &copy; 2016 Se7ensky
+
+
+
+
