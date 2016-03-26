@@ -42,8 +42,7 @@
 .window
 	font-size 1rem
 	color #2757b0
-	background linear-gradient(135deg, rgba(252,255,244,0.91) 0%,rgba(247,249,234,0.91) 27%,rgba(239,239,217,0.88) 71%,rgba(233,233,206,0.88) 100%)
-
+	background #fff url(../img/page-bg.png) repeat left top
   
 .wrapper
 	width 80%
@@ -66,7 +65,8 @@
 /******************************************/
 .products-container
 	display flex
-	flex-flow row wrap
+	flex-direction row
+	flex-wrap wrap
 	justify-content center
 	align-items center
 	align-content center
@@ -74,29 +74,36 @@
 /******************************************/
 /*					product-item styles
 /******************************************/
+//variables
+
+$bdRad = 0.8rem //border-radius
+
 .product-item
 	display block
 	position relative
 	float left
-	margin 1.0em 2% 0 0
+	margin 1.0rem 1.0rem 0 0
 	padding 0
-	flex 1 25% 1
+	width 14.0625rem
+	height auto
 	text-decoration none
 	background-color transparent
-	border-radius 8px
-	box-shadow 0 0.5em 0.3em -0.3em #d4d9dc
+	border-radius $bdRad
+	box-shadow 0 0.5em 0.3em -0.3em #c0c4c6
 	transition top 0.5s ease 0.2s
 	&:hover
-		box-shadow 0 0 0.3em 0.2em #d4d9dc
 	&:active
 	&:focus
+		box-shadow 0 0 0.3em 0.2em #ed7474
 		outline none
 		top -0.15rem
-	
+
 	&__image
 		display block
-		max-width 100%
-		margin 0 auto
+		width 100%
+		border-top-right-radius $bdRad
+		border-top-left-radius $bdRad
+		height auto
 		border none
 		
 	&__description
@@ -107,20 +114,23 @@
 		font-family 'robotoregular', Helvetica, sans-serif
 		text-align center
 		color #2757b0
-		border-bottom-right-radius 8px
-		border-bottom-left-radius 8px
+		border-bottom-right-radius $bdRad
+		border-bottom-left-radius $bdRad
 
 	&__price
 		display block
 		margin-top 13%
-		font 1.5rem 'roboto_condensedregular', Helvetica, sans-serif
-		font-weight bold
+		font bolder 1.5rem 'roboto_condensedbold', Helvetica, sans-serif
 		color #000
 		text-align center
 		&:after
 			content ' грн'
 			font-size 0.8rem
 
+.product-item:hover 
+	.product-item__description
+		color #e01f1f
+		
 /******************************************/
 /*					page-footer styles
 /******************************************/
