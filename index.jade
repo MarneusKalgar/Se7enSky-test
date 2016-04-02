@@ -1,7 +1,7 @@
 doctype
 html( lang="ru", class="window" )
 	head
-		title Se7ensky-test
+		title Se7enSky-test
 		meta( charset='utf-8' )
 		meta( http-equiv='X-UA-Compatible', content='IE=edge' )
 		meta( name='viewport', content='width=device-width, initial-scale=1.0' )
@@ -19,34 +19,37 @@ html( lang="ru", class="window" )
 		//end block page-header
 
 		//block product-container
-		section.products-container
+		section.products-container.cf
 
 			//- This mixin generates the product-item blocks
-			mixin productItem(src, alt, name, items)
+			mixin productItem( name, items )
 				//block product-item
 				a.product-item( href="#" )
-					img.product-item__image(src=src, alt=alt)
-					p.product-item__description= name
-						span.product-item__price= items
+					.product-item__description
+						p.product-item__title= name
+						p.product-item__price= items
 				//end block product-item
 
-			+productItem('img/backpack-ready-for-school.png', 'Рюкзак Ready for School', 'Рюкзак "Ready for School"', '241.50')
+			//- mixin initialization
+			+productItem( 'Рюкзак "Ready for School"', '241.50' )
 
-			+productItem('img/backpack-world-of-birds.png', 'Рюкзак Птичье царство', 'Рюкзак "Птичье царство"', '241.50')
+			+productItem( 'Рюкзак "Птичье царство"', '241.50' )
 
-			+productItem('img/backpack-madonna.png', 'Рюкзак Мадонна', 'Рюкзак "Рюкзак Мадонна"', '241.50')
+			+productItem( 'Рюкзак "Мадонна"', '241.50' )
 
-			+productItem('img/backpack-violet-green.png', 'Рюкзак Violet Green', 'Рюкзак "Violet Green"', '241.50')
+			+productItem( 'Рюкзак "Violet Green"', '241.50' )
 
-			+productItem('img/backpack-ripndip-wilderness.png', 'Рюкзак Ripndip Wilderness', 'Рюкзак "Ripndip Wilderness"', '241.50')
+			+productItem( 'Рюкзак "Ripndip Wilderness"', '241.50' )
 
-			+productItem('img/backpack-of-the-wall.png', 'Рюкзак Of the Wall', 'Рюкзак "Of the Wall"', '241.50')
+			+productItem( 'Рюкзак "Of the Wall"', '241.50' )
 
-			+productItem('img/backpack-simple-red.png', 'Рюкзак Simple Red', 'Рюкзак "Simple Red"', '241.50')
+			+productItem( 'Просто красный рюкзак', '241.50' )
 		
+		//end block product-container
+
 		//block page-footer
 		footer.page-footer
-			p.page-footer__info &copy; 2016 Se7ensky
+			p.page-footer__info &copy; 2016 Se7enSky
 
 
 
